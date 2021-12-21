@@ -7,6 +7,7 @@ import RichText from './RichText'
 import Image from './Image'
 import TwoColumns from './TwoColumns'
 import ImageGallery from './ImageGallery'
+import LinkList from './LinkList'
 
 // resolve Storyblok components to Next.js components
 const Components = {
@@ -18,7 +19,8 @@ const Components = {
   rich_text: RichText,
   image: Image,
   two_columns: TwoColumns,
-  image_gallery: ImageGallery
+  image_gallery: ImageGallery,
+  link_list: LinkList
 }
 
 function DynamicComponent ({ blok, subPages }) {
