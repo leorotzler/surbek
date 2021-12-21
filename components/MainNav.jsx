@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function MainNav({ items, currentSlug }) {
 	const [isOpen, setIsOpen] = useState(false)
 
-	const NavLink = ({ url, name }) => {
+	const NavLink = ({ url, name, onClick }) => {
 		return (
 			<Link href={`${url === '/' ? url : `/${url}`}`}>
 				<a
@@ -14,6 +14,7 @@ export default function MainNav({ items, currentSlug }) {
 							? 'underline'
 							: ''
 					} hover:underline underline-offset-2`}
+                    onClick={onClick}
 				>
 					{name}
 				</a>
@@ -51,6 +52,7 @@ export default function MainNav({ items, currentSlug }) {
 							return (
 								<React.Fragment key={item._uid}>
 									<NavLink
+                                        onClick={() => setIsOpen(false)}
 										name={item.display_name}
 										url={item.link.story.url}
 									/>
